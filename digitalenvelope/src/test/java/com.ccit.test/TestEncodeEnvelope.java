@@ -280,6 +280,9 @@ public class TestEncodeEnvelope {
 		System.out.println("中安云科转化成龙脉可识别的签名值 结果是："+Base64.toBase64String(sign));
 	}
 
+	/**
+	 * 验证签名测试
+	 */
 	@Test
 	public void verifySign() {
 		try {
