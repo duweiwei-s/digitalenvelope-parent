@@ -281,7 +281,7 @@ public class TestEncodeEnvelope {
 	}
 
 	/**
-	 * 验证签名测试
+	 * 验证签名测试2
 	 */
 	@Test
 	public void verifySign() {
