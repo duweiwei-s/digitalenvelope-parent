@@ -1,5 +1,8 @@
 package com.ccit.digitalenvelope.asn1structure;
 
+/**
+ * @author duwei
+ */
 public class Constants {
 	/**
 	 * SM2算法OID

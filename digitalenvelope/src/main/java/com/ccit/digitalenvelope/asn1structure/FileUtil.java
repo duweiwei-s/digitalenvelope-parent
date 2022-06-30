@@ -12,7 +12,7 @@ import java.io.OutputStream;
 public class FileUtil {
 
 	public static byte[] readFileToByte(File f) throws IOException{
-		byte buff[] = new byte[(int) f.length()];
+		byte[] buff = new byte[(int) f.length()];
 		FileInputStream in = null;
 		try {
 			in = new FileInputStream(f);
@@ -20,8 +20,9 @@ public class FileUtil {
 		} catch (IOException e) {
 			throw e;
 		} finally {
-			if (in != null)
+			if (in != null) {
 				in.close();
+			}
 		}
 		return buff;
 	}

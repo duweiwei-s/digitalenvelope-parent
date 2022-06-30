@@ -27,8 +27,8 @@ public class Cryption {
 		//compute C3
 		C3 = new byte[32];
 //		System.arraycopy(bytInputData, C2Len+65, C3, 0, 32);
-//		xueli comment 2013-07-22  src by dongxuefei
-//		密文C=c1||c3||c2,取c3起始位置变化
+//		Muesli comment 2013-07-22  src by dongxuefei
+		//密文C=c1||c3||c2,取c3起始位置变化
 		System.arraycopy(bytInputData, 65, C3, 0, 32);
 
 		BigInteger  big_pri_dA, big_x1, big_y1, big_x2, big_y2,
@@ -112,8 +112,9 @@ public class Cryption {
 
 		//check if t is zero
 		for (iter = 0; iter < C2Len; iter++) {
-			if(pout[iter] != 0)
+			if(pout[iter] != 0) {
 				break;
+			}
 		}
 
 		if (C2Len == iter)

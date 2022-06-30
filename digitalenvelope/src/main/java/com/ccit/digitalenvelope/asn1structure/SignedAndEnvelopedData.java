@@ -178,10 +178,13 @@ public class SignedAndEnvelopedData implements ASN1Encodable,Serializable {
         v.add(recipientInfos);
         v.add(digestAlgorithms);
         v.add(encryptedContentInfo);
-        if (certificates != null)
+        if (certificates != null){
             v.add(new DERTaggedObject(false, 0, certificates));
-        if (crls != null)
+        }
+
+        if (crls != null) {
             v.add(new DERTaggedObject(false, 1, crls));
+        }
         v.add(signerInfos);
 
         return new DERSequence(v);

@@ -90,7 +90,7 @@ public class CERT_INFO {
 				ais2.close();
 				bIn2.close();
 			} else {
-//				pubkey = x509cert.getPublicKey().getEncoded();
+//				puke = x509cert.getPublicKey().getEncoded();
 				pubkey = x509cert1.getSubjectPublicKeyInfo()
 						.getPublicKeyData().getBytes();
 			}
