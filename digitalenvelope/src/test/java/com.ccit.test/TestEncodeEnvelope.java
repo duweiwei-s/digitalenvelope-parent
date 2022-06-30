@@ -165,7 +165,7 @@ public class TestEncodeEnvelope {
      * sm2 加密
      */
     @Test
-    public void testSM2enc() throws ParameterException {
+    public void testSM2enc() {
         EnvelopeUtil envelope = new EnvelopeUtil();
         //原文
         byte[] indata = ("2020111306831613"+"09Csoo9XFTw=").getBytes();
@@ -203,7 +203,6 @@ public class TestEncodeEnvelope {
 
 	/**
 	 * 龙脉签名值转化成中安云科可以识别的签名值
-	 * @throws IOException
 	 */
 	@Test
 	public void testLongToZayk() throws IOException {
