@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>digitalenvelope-parent</artifactId>
+        <groupId>com.ccit.digitalenvelope</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>digitalenvelope</artifactId>
+    <version>1.3.5</version>
+    <dependencies>
+        <!--密码机的模块依赖根据实际需要的密码机进行修改-->
+        <dependency>
+            <groupId>com.ccit.digitalenvelope</groupId>
+            <artifactId>zayx202204</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.58</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <!-- 过滤器排除配置文件-->
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <!--<excludes>
+                                        <exclude>**/*.properties</exclude>
+                                        <exclude>org/**</exclude>
+                                    </excludes>-->
+                                    <!-- 仅仅打包ccit包下的文件-->
+                                    <includes>
+                                        <include>**/ccit/**</include>
+                                    </includes>
+                                </filter>
+                            </filters>
+                            <!--<artifactSet>
+                                &lt;!&ndash; 捆绑包含,目标项目不需要再手动引用这个包了 &ndash;&gt;
+                                <includes>
+                                    <include>com.ccit:*</include>
+                                </includes>
+                            </artifactSet>-->
+                            <createSourcesJar>false</createSourcesJar>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
