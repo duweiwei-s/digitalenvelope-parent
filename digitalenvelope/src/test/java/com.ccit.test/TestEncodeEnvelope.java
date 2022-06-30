@@ -1,6 +1,5 @@
 package com.ccit.test;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -11,7 +10,6 @@ import com.ccit.digitalenvelope.exception.ParameterException;
 import org.bouncycastle.asn1.*;
 import org.bouncycastle.util.BigIntegers;
 import org.bouncycastle.util.encoders.Base64;
-import org.bouncycastle.util.test.FixedSecureRandom;
 import org.junit.Test;
 
 import com.ccit.digitalenvelope.EnvelopeUtil;
